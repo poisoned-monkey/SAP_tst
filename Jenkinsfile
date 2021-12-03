@@ -5,11 +5,7 @@ pipeline {
     stages {
         stage ('Setup') {
             steps {
-                setupCommonPipelineEnvironment(
-                    collentTelemetryData: 'false',
-                    verbose: true,
-                    script: this
-                    )
+                setupCommonPipelineEnvironment script: this
             }
         }
     }
