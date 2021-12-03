@@ -18,5 +18,10 @@ pipeline {
                 gctsExecuteABAPUnitTests script: this
             } //steps
         } // stage
+        stage ('Rollback Commit') {
+            steps {
+                gctsRollback script: this
+            } //steps
+        } // stage
     } //stages
 } //pipeline
