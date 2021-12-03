@@ -13,5 +13,10 @@ pipeline {
                 gctsDeploy script: this
             } //steps
         } // stage
+        stage ('Run Unit Tests') {
+            steps {
+                gctsExecuteAbapUnitTest script: this
+            } //steps
+        } // stage
     } //stages
 } //pipeline
