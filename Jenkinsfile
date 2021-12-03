@@ -26,18 +26,19 @@ pipeline {
                 }
             } //steps
         } // stage
-        stage ('Rollback Commit') {
+        stage ('Run ATC Checks') {
             steps {
+                script {
                 abapEnvironmentRunATCCheck script: this
                 def checkstyle = scanForIssues tool: checkStyle(pattern: 'ATCResult.xml')
                 publishIssues issues: [checkstyle], failedTotalAll: 1
                 if (currentBuild.result == 'FAILURE') {
                     echo 'ATC check failed!'
                     checks_failed = true
-                }
-                gctsRollback script: this
-            } //steps
-        } // stage
+                } //steps
+             } // stage
+           }
+        }
         stage ('Success build') {
             when { expression { checks_failed == false } }
             steps {
