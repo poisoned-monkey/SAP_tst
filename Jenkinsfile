@@ -15,7 +15,7 @@ pipeline {
         } // stage
         stage ('Run Unit Tests') {
             steps {
-                gctsExecuteAbapUnitTest script: this
+                gctsExecuteAbapUnitTests script: this
             } //steps
         } // stage
     } //stages
