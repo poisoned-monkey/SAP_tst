@@ -15,12 +15,27 @@ pipeline {
         } // stage
         stage ('Run Unit Tests') {
             steps {
-                gctsExecuteABAPUnitTests script: this
+                script {
+                    checks_failed = false
+                    try {
+                        gctsExecuteABAPUnitTests script: this
+                    } catch (err) {
+                        unstable('AUnit Test Failed')
+                        checks_failed = false
+                    }
+                }
             } //steps
         } // stage
         stage ('Rollback Commit') {
+            when { expression { checks_failed == true } }
             steps {
                 gctsRollback script: this
+            } //steps
+        } // stage
+        stage ('Success build') {
+            when { expression { checks_failed == false } }
+            steps {
+                echo ('Build Success!')
             } //steps
         } // stage
     } //stages
