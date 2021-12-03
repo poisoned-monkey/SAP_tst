@@ -3,7 +3,7 @@ general:
   verbose: true
   steps:
     gctsDeploy:
-      host: 'https://gprd.sapds.ru:8000'
+      host: 'http://gprd.sapds.ru:8000'
       client: '500'
-      abapCredentialsId: 'gCTS_target'
+      abapCredentialsId: 'WRGCTS21_5'
       repository: 'poisoned-monkey-sap_tst'
