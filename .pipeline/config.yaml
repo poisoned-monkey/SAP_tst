@@ -7,7 +7,7 @@ steps:
     client: '500'
     abapCredentialsId: 'WRGCST21_0'
     repository: 'poisoned-monkey-sap_tst'
-   gctsExecuteABAPUnitTest:
+  gctsExecuteABAPUnitTest:
     host: 'http://gprd.sapds.ru:8000'
     client: '500'
     abapCredentialsId: 'WRGCST21_0'
