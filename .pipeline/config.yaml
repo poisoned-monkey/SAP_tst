@@ -17,3 +17,10 @@ steps:
     client: '500'
     abapCredentialsId: 'WRGCST21_0'
     repository: 'poisoned-monkey-sap_tst'
+  abapEnvironmentRunATCCheck:
+    abapCredentialsId: 'WRGCST21_0'
+    host: 'http://gprd.sapds.ru:8000'
+    atcConfig: 'atcconfig.yml'
+    dockerPullImage: false
+    
+    
