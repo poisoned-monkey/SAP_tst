@@ -5,6 +5,6 @@ steps:
   gctsDeploy:
     host: 'https://gprd.sapds.ru:44300'
     client: '500'
-    abapCredentialsId: 'WRGCST21_51'
+    abapCredentialsId: 'WRGCST21_0'
     repository: 'poisoned-monkey-sap_tst'
 
